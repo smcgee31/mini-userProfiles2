@@ -1,12 +1,12 @@
-var app = angular.module('userProfiles');
+angular.module('userProfiles').controller('MainController', function($scope, mainService) {
 
-app.controller('MainController', function($scope, mainService) {
+    $scope.getUsers = function() {
+    	mainService.getUsers().then(function(response) {
+            debugger
+            $scope.users = response.data.data;
+        });
+    };
 
-  $scope.getUsers = function() {
-  	$scope.users = mainService.getUsers();
-  }
-
-
-  $scope.getUsers();
+    $scope.getUsers();
 
 });
