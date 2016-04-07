@@ -2,7 +2,6 @@ angular.module('userProfiles').controller('MainController', function($scope, mai
 
     $scope.getUsers = function() {
     	mainService.getUsers().then(function(response) {
-            debugger
             $scope.users = response.data.data;
         });
     };
